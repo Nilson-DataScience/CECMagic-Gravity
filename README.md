@@ -10,15 +10,15 @@ Ao derrotá-los, o aluno coleta fragmentos mágicos, que podem ser trocados por 
 ## ⚙️Sistema
 
 **🧙💂‍♂️🧝‍♂️Classes:**
-**Mago:**  _Bônus em ataque (x1,30)_
-**Guerreiro:** _Bônus em defesa (x1,30)_
-**Arqueiro:**  _Bônus em ataque e defesa (x1,15)_
+- **Mago:**  _Bônus em ataque (x1,30)_
+- **Guerreiro:** _Bônus em defesa (x1,30)_
+- **Arqueiro:**  _Bônus em ataque e defesa (x1,15)_
 
 **⚔️Equipamento:**
-**Lendário:**  _45 pontos_
-**Épico:** _25 pontos_
-**Raro:** _15 pontos_
-**Comum:**  _5 pontos_
+- **Lendário:**  _45 pontos_
+- **Épico:** _25 pontos_
+- **Raro:** _15 pontos_
+- **Comum:**  _5 pontos_
 ---
 ### ✨ Nota de Rodapé
 ¹ *Era do analfabetismo*: período ancestral em que o conhecimento era restrito e vulnerável, dando origem à missão da Rocha Chueiri.  
