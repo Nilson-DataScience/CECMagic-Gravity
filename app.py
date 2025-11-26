@@ -1,4 +1,4 @@
-player = {
+players = {
     '1': {
         'nome':'Nilson',
         'idade': 24,
@@ -10,10 +10,9 @@ player = {
             'defesa': 5,
             'vida': 10,
         },
-        'nivel': 1,
+        'nivel': 100,
         'xp': 0,
-        'equipamentos': [2],
-        'dungeon': 1,
+        'equipamentos': [0]
 
     },
     '2': {}
@@ -23,7 +22,6 @@ equipamentos = {
     '1': {
         'nome': 'Espada de Madeira',
         'classe': 'Guerreiro',
-        'nivel': 1,
         'habilidades': {
             'ataque': 1,
             'defesa': 1,
@@ -41,7 +39,6 @@ equipamentos = {
     '3': {
         'nome': 'Arco de Madeira',
         'classe': 'Arqueiro',
-        'nivel': 1,
         'habilidades': {
             'ataque': 2,
             'defesa': 0,
@@ -49,24 +46,49 @@ equipamentos = {
         },
 }
 
-monstros = {
-    1: {'nome': 'Rato',
-        'habilidades': {
-            'ataque': 1,
-            'defesa': 0,
-            'vida': 1,}
-        },
-    2:{'nome': 'Formiga',
-        'habilidades': {
-            'ataque': 2,
-            'defesa': 2,
-            'vida': 2,}
-        },
-    3:{
-        'nome': 'Coelho',
-        'habilidades': {
-            'ataque': 4,
-            'defesa': 3,
-            'vida': 1,}
-    }
-    }
+
+def luta(player,monster):
+  print('Você está lutando contra um',monster['nome'])
+  player=player['habilidades']
+  monster=monster['habilidades']
+  while True:
+    player['ataque'] -= monster['defesa']
+    monster['ataque'] -= player['defesa']
+
+    monster['vida'] -= player['ataque']
+    player['vida'] -= monster['ataque']
+
+    if player['vida'] <= 0:
+      print('Você perdeu a luta')
+      break
+    elif monster['vida'] <= 0:
+      print('Você ganhou a luta')
+      break
+ 
+
+
+
+
+def explorarDungeon(player):
+  print('Você está explorando o Dungeon no Andar: ', player.get('dungeon'))
+  luta(player,monstros.get(player['dungeon']))
+
+
+
+
+
+
+def iniciar():
+  print('Bem vindo ao RPG Terminal')
+  id = str(input('Qual seu Id?: '))
+  personagem = players[id]
+  print(personagem['nome'])
+
+  print('Menu\n1-Dungeon')
+  
+  escolha = input('Escolha uma opção: ')
+  if escolha == '1':
+    print('Você entrou no Dungeon')
+    explorarDungeon(personagem)
+
+iniciar()
